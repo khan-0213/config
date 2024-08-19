@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Kirish
+{% endblock title %}
+
+{% block content %}
+<style>
+    h3, form {
+        background-color: #FFF8DC;
+    }
+</style>
+    <h3>
+        Kirish
+    </h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Kirish</button>
+        <a href="{% url 'password_reset' %}" role="button" class="btn btn-success">Kalitso'zni tiklash</a>
+    </form>
+{% endblock content %}

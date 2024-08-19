@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<style>
+    h2, form {
+        background: #FFEFD5;
+    }
+</style>
+    <h2>
+        Yangi post qo'shish
+    </h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Saqlash</button>
+    </form>
+{% endblock content %}
